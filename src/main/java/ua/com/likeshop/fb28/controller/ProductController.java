@@ -23,9 +23,10 @@ return addProduct();
     }
 
 
-
+//This is for testing
     @GetMapping("/fakeProd")
     public String fake(){
+
         productRepisitory.save(new Product("item1","http://localhost:63342/templatemo_367_shoes/css/images/product/10.jpg","asasas",26));
         productRepisitory.save(new Product("item3","http://localhost:63342/templatemo_367_shoes/css/images/product/10.jpg","qweasasas",526));
         productRepisitory.save(new Product("item2","http://localhost:63342/templatemo_367_shoes/css/images/product/10.jpg","asasas",26));
