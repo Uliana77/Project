@@ -1,31 +1,31 @@
 package ua.com.likeshop.fb28.repository;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import ua.com.likeshop.fb28.entity.Product;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-
-public interface ProductRepisitory extends CrudRepository<Product, Long>, PagingAndSortingRepository<Product, Long> {
-
-
- //   Iterable<Product> findAll(Sort sort);
-    //new code
-    //Page<Product> findAll(Pageable pageable);
+import java.util.Map;
 
 
-    ///////
+public interface ProductRepisitory extends JpaRepository<Product, Long>, PagingAndSortingRepository<Product, Long> {
 
-//    List<Product> getAllPostsByRank(PageRequest pageRequest);
-//
-//
 
-//    ///////
+    default List<Product> getProductsByIds(List<Long> ids) {
+        List<Product> productList = this.findAll(ids);
+        Map<Long, Product> productsMap = new HashMap<>();
+        for (Product p : productList) {
+            productsMap.put(p.getId(), p);
+        }
+        List<Product> result = new ArrayList<>();
+        for (long id : ids) {
+            result.add(productsMap.get(id));
+        }
+        return result;
+    }
 }
 
 

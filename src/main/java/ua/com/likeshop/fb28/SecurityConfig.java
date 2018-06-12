@@ -16,18 +16,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/css/**", "/index").permitAll()
-                .antMatchers("/user/**").hasRole("USER")
+                .antMatchers("/adminPages.html").hasRole("USER")
                 .and()
                 .formLogin()
-                .loginPage("/login").failureUrl("/login-error");
+                .defaultSuccessUrl("/adminPages.html", true);
         http.csrf().disable();
     }
+
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
                 .inMemoryAuthentication()
-                .withUser("user").password("password").roles("USER");
+                .withUser("user")
+                .password("password")
+                .roles("USER");
     }
 
 }

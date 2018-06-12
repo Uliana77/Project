@@ -1,0 +1,47 @@
+<!DOCTYPE html/>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Contact Us</title>
+    <link href="css/contact.css" rel="stylesheet" type="text/css">
+
+
+</head>
+
+
+<body class="body">
+<script src="js/head.js"></script>
+
+<div w3-include-html="content.html"></div>
+
+<script>
+    includeHTML();
+</script>
+<div class="container">
+    <!--<form action="/contact" method="post" class="container w3-card-4 w3-light-grey">-->
+    <h2 style="text-align: center; color: #555; margin-top: 5%">Contact Us</h2>
+
+    <input class="Line" id="firstName" type="text" placeholder="First Name"/><br/>
+
+    <input class="Line" type="text" id="lastName" placeholder="Last Name"/><br/>
+
+    <input class="Line" id="email" type="text" placeholder="E-mail"/><br/>
+
+    <input style="height: 100px" id="message" type="text" placeholder="Write something.." style="height:100%"/><br/>
+
+    <br/>
+
+    <button class="button button1" onclick="clickIs()"><a href="contact.html">Send</a></button>
+    <!--</form>-->
+</div>
+
+<div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2572.9170197710564!2d24.02402361578255!3d49.8440166793963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add72f9bc6a89:0xf9783fecb4fecf1f!2z0JvRjNCy0L7QstGB0LrQuNC5INC-0L_QtdGA0L3Ri9C5INGC0LXQsNGC0YA!5e0!3m2!1sru!2sua!4v1520422117454"
+            width="1000" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
+
+
+<script src="js/contact.js"></script>
+
+</body>
+</html>

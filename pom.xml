@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>fb28</name>
+    <username>fb28</username>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -71,7 +71,9 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+
+
+    </dependencies>
 
 	<build>
 		<plugins>
